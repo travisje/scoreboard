@@ -1,0 +1,123 @@
+<div class="date">
+  <h2>Major League Baseball Scoreboard</h2>
+  <h2><%=@games[0].date_time.localtime.strftime("%A, %B %e, %G")%></h2>
+</div>
+<% @games.each do |game| %>
+  <div class= "scoreboard_wrapper">
+    <div class= "status_top">
+      <p class="font_medium">
+        <% if game.status == "FINAL" %>
+          <%= game.status %>
+        <% elsif game.status == "IN PROGRESS"%>
+          <%= game.status_detail%>
+        <% elsif game.status == "SCHEDULED" %>
+          <% time = game.date_time.localtime.strftime("%l:%M%P %Z") %>
+          <%= "#{time}" %>
+        <% else %>
+          <%= game.status %>
+        <% end %>
+      </p>
+    </div>
+    <div class="team_display_wrapper">
+    <!-- BEGIN LEFT SIDE SCOREBOARD DISPLAY -->
+      <div class="team_display_left_wrapper">
+        <div class="team_image_and_record_wrapper_left">
+          <div class="team_image_container_left">
+            <img src= "http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/<%=game.home_team.abbreviation%>.png&amp;h=175&amp;w=175">
+          </div>
+          <div class="team_record_container_left">   
+            <p><%= game.home_team.record %> (Home)</p>
+          </div>
+        </div>
+        <div class="team_score_wrapper_left">
+          <div class="team_score_container_left">   
+            <% if game.status != "SCHEDULED" %>
+              <p><%= game.home_team_score %></p>
+            <% end %>
+          </div>
+          <div class="team_score_misc_container_left">
+          </div>
+        </div>
+      </div>
+
+      <!-- BEGIN RIGHT SIDE SCOREBOARD DISPLAY -->
+      <div class="team_display_right_wrapper">
+        <div class="team_score_wrapper_right">
+          <div class="team_score_container_right">   
+            <% if game.status != "SCHEDULED" %>
+              <p><%= game.away_team_score %></p>
+            <% end %>
+          </div>
+          <div class="team_score_misc_container_right">
+          </div>
+        </div>
+        <div class="team_image_and_record_wrapper_right">
+          <div class="team_image_container_right">
+            <img src= "http://a.espncdn.com/combiner/i?img=/i/teamlogos/mlb/500/<%=game.away_team.abbreviation%>.png&amp;h=175&amp;w=175">
+          </div>
+          <div class="team_record_container_right">   
+            <p><%= game.away_team.record %> (Away)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END RIGHT SIDE SCOREBOARD DISPLAY -->
+
+    <div class = "bottom_status_detail">
+      <% if game.status == "IN PROGRESS"%>
+        <p><%= "#{game.situation.outs_text}. #{game.situation.base_runners_text}" %></p>
+      <% end %>
+      <button class="display_stats">
+        +
+      </button>
+    </div>
+    
+    <!-- BEGIN SCOREBOARD STATUS DETAIL -->
+    <div class="gamestats_wrapper">
+      <div class="stats_middle_container">
+        <p class="bold_type font_medium"><%= game.venue.name%></p>
+        <p><%= "#{game.venue.city}, #{game.venue.state}"%></p>
+        </br>
+        <p>Starting Pitchers</p>
+      </div>
+      <div class="stats_wrapper_left">
+        <img src="<%=game.home_starting_pitcher.picture_url%>">
+        <p><%= game.home_starting_pitcher.name %></p>
+      </div>
+      <div class="stats_wrapper_right">
+        <img src="<%=game.away_starting_pitcher.picture_url%>">
+        <p><%= game.away_starting_pitcher.name %></p>
+      </div>
+      <% if game.status == "FINAL" %>
+        <div class="stats_middle_container">
+          <p>Pitching Results</p>
+        </div>
+        <div class="stats_wrapper_left">
+          <% if game.home_team_winner? %>
+            <%= render partial: 'winning_pitching_results', locals: {game: game} %>
+          <% else %>
+            <% if game.losing_pitcher %>
+              <p>Losing Pitcher</p>
+                <img src="<%=game.losing_pitcher.picture_url%>">
+              <p><%= game.losing_pitcher.name%></p>
+            <% end %>
+          <% end %>    
+        </div>
+        <div class="stats_wrapper_right">
+          <% if game.away_team_winner? %>
+            <%= render partial: 'winning_pitching_results', locals: {game: game} %>
+          <% else %>
+            <% if game.losing_pitcher %>
+              <p>Losing Pitcher</p>
+
+                <img src="<%=game.losing_pitcher.picture_url%>">
+              <p><%= game.losing_pitcher.name%></p>
+            <% end %>
+          <% end %>    
+        </div>
+      <% end %>   
+    </div>
+    <!-- END SCOREBOARD STATUS DETAIL -->
+  </div>
+<% end %>
+

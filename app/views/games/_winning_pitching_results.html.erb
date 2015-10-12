@@ -1,0 +1,14 @@
+<% if game.winning_pitcher %>
+  <div class="player_div">
+    <p>Winning Pitcher</p>
+    <img src="<%=game.winning_pitcher.picture_url%>">
+    <p><%= game.winning_pitcher.name%></p>
+  </div>
+<% end %>
+<% if game.saving_pitcher %>
+  <div class="player_div">
+    <p>Saving Pitcher</p>
+    <img src="<%=game.saving_pitcher.picture_url%>">
+    <p><%= game.saving_pitcher.name%></p>
+  </div>
+<% end %>

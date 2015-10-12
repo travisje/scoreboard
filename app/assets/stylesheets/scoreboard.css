@@ -1,0 +1,191 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+ul {
+
+  display: inline;
+}
+p {
+  font-size: 16px;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.date {
+  text-align: center;
+  margin-bottom: 45px;
+  background-color: rgb(248, 248, 248);
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-top: 20px;
+
+}
+
+.date h2 {
+  font-size: 25px;
+}
+.scoreboard_wrapper {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  max-width: 1000px;
+  min-width: 600px;
+  overflow: hidden;
+}
+
+
+
+.status_top {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.team_display_wrapper {
+  background-color: rgb(248, 248, 248);
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+  .team_display_left_wrapper {
+    float: left;
+    margin: 0 auto;
+    width: 50%;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: 1px;
+  }
+
+    .team_image_and_record_wrapper_left {
+      float: left;
+      margin: 0 auto;
+      width: 50%;
+
+
+    }
+
+      .team_image_container_left {
+
+      }
+
+      .team_record_container_left{
+
+      }
+
+    .team_score_wrapper_left {
+      overflow: hidden;
+    }
+      .team_score_container_left {
+        height: 180px;
+      }
+
+      .team_score_container_left p {
+        font-family: 'Lato', sans-serif;
+        font-size: 140px;
+
+        display: inline;
+      }
+      .team_score_misc_container_left {
+
+      }
+
+  .team_display_right_wrapper {
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+    .team_score_wrapper_right {
+      float: left;
+      margin: 0 auto;
+      width: 50%;
+
+    }
+
+      .team_score_container_right {
+        height: 180px;
+      }
+
+        .team_score_container_right p {
+          font-size: 140px;
+          font-family: 'Lato', sans-serif;
+          display: inline;
+
+        }
+
+      .team_score_misc_container_right {
+
+      }
+    
+    .team_image_and_record_wrapper_right {
+      overflow: hidden;
+    }
+
+      .team_image_container_right {
+
+
+      }
+
+      .team_record_container_right {
+
+      }
+
+  .bottom_status_detail {
+    padding-top: 14px;
+    text-align: center;
+
+  }
+
+  .bold_type {
+    font-weight: 700;
+  }
+
+  .font_medium {
+    font-size: 19px;
+  }
+
+.gamestats_wrapper {
+  background-color: rgb(248, 248, 248);
+  overflow: hidden;
+  display: none;
+  padding-bottom: 20px;
+
+}
+  
+  .stats_middle_container {
+    text-align: center;
+    padding-top: 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0px;
+  }
+
+  .stats_wrapper_left {
+    float: left;
+    width: 50%;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: black;
+    text-align: center;
+    display: inline;
+
+  }
+
+  .stats_wrapper_right {
+    text-align: center;
+  }
+
+  .player_div {
+    float: left;
+    width: 50%;
+  }
+
+  .grey {
+    background-color: rgb(248, 248, 248);
+  }
