@@ -1,28 +1,15 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to this example Scoreboard Rails app which displays Major Leage Baseball scores in your web browser. In order to view the scoreboard, first either clone or fork this repository. 
 
-Things you may want to cover:
+This app utilizes Rails version 4.2.3. If you don't have Rails installed in your system, instructions to do so can be found here: http://installrails.com/steps/choose_os
 
-* Ruby version
+1. From the root directory of this repository, type "bundle install" in your terminal to install the app's dependencies.
 
-* System dependencies
+2. Then to start the localhost webserver, type "rails s" from your command line. 
 
-* Configuration
+3. Then go to your web browser and visit the localhost url. Rails provides this url info after starting your webserver. It is usually http://localhost:3000/
 
-* Database creation
+The scoreboard is visible from this page.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Thank you and please let me know if you have any questions.
