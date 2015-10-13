@@ -1,0 +1,9 @@
+notes
+
+for add'l feature...
+
+<div class="stats_middle_container">
+  <% game.links.each do |link_type, url_hash| %>
+    <ul><a href="<%=url_hash["href"]%>"><%=link_type%></a></ul>
+  <% end %>
+</div>
