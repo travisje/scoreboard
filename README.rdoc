@@ -1,6 +1,10 @@
 == README
 
-Welcome to this example Scoreboard Rails app which displays Major League Baseball scores in your web browser. In order to view the scoreboard, first either clone or fork this repository. 
+Welcome to this example Scoreboard Rails app which displays Major League Baseball scores in your web browser. It can be accessed via the following url:
+
+http://scoreboard-example-app.herokuapp.com/
+
+If you would like to view the scoreboard locally, first either clone or fork this repository. 
 
 This app utilizes Rails version 4.2.3. If you don't have Rails installed in your system, instructions to do so can be found here: http://installrails.com/steps/choose_os
 
